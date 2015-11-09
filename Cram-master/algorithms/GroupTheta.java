@@ -13,12 +13,27 @@ public class GroupTheta extends Algo{ // Replace TeamName
         Cram game = new Cram(false);
         game.startGame(GroupTheta.class); // Replace TeamName
     }
+//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------      ALGORITHMS AND METHODS      ---------------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    //Gets game board for the first time, and checks to see if someone else has put something on the board. If player 1, no one will have.
+    private int[][] gameBoard = game.getBoard();
+    private int init = GroupTheta.initCheck(gameBoard);
 
     public static String algorithm(Cram game)
     {//Algorithm
+        String[] moves;
+        if(init == 0)
+        {
+            Random rn = new Random();
+            int i = rn.nextInt(37);
+            return moves[i];
+        }
+
     	Node top = new Node();
-    	int[][] gameBoard = game.getBoard();
-    	String[] moves = GroupTheta.getValidMoves(gameBoard);
+    	gameBoard = game.getBoard();
+    	moves = GroupTheta.getValidMoves(gameBoard);
     	
     	for(int i = 0; i < moves.length; i++)
     	{
@@ -58,6 +73,24 @@ public class GroupTheta extends Algo{ // Replace TeamName
     			}
     		}
     	}
+        return validMoves;
     }
-    return validMoves;
+
+    public static int initCheck(int[][] board)
+    {
+        int init = 0;
+        for(int i = 0; i < board[0].length; i++)
+        {
+            for(int j = 0; j < board.length; j++)
+            {
+                //If init = 1, the algorithm will skip the arbitrary block placement.
+                if(board[i][j] != 0 || board[i][j] != 99)
+                {
+                    init = 1
+                    return init;
+                    break;
+                }
+            }
+    }
+    
 }
