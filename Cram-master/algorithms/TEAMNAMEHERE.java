@@ -1,4 +1,4 @@
-package algorithms;
+/*package algorithms;
 import org.gamelink.game.Cram;
 import org.gamelink.game.Algo;
 
@@ -16,9 +16,10 @@ public class TEAMNAMEHERE extends Algo{ // Replace TeamName
 
     public static String algorithm(Cram game){
  
-   /************************************************
+   *//************************************************
     ************  PLACE ALGORITHM HERE  ************
-    ************************************************/
+    ************************************************//*
 
     }
 }
+*/

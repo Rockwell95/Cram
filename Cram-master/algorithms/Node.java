@@ -7,13 +7,13 @@ public class Node {
 	
 	private int childCount;
 	
-	public String relocate;
+	public String assignedMove;
 	
 	public Node() {
 		// Constructor for root.
 		childCount = 0;
 		child = new Node[5];
-		relocate = null;
+		assignedMove = null;
 	}
 	
 	public Node(String move) {
@@ -21,7 +21,7 @@ public class Node {
 		//Constructor for children
 		childCount = 0;
 		child = new Node[5];
-		relocate = move;
+		assignedMove = move;
 	}
 	
 	public void createChild(String move)
@@ -33,7 +33,7 @@ public class Node {
 	public boolean isTop()
 	{
 		boolean par = false;
-		if (relocate.equals(null))
+		if (assignedMove.equals(null))
 		{
 			par = true;
 		}
